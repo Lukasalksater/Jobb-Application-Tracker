@@ -47,7 +47,6 @@
                     Console.WriteLine("Did not input valid status, assumes it is applied");
                     curentStatus = Status.Applied;
                     break;
-
             }
         }
         public Enum GetStatus()
@@ -56,7 +55,8 @@
         }
         public int GetDaysSinceApplied()
         {
-            return 0;
+            int daysSinceApplied = (DateTime.Now - ApllicationDate).Days;
+            return daysSinceApplied;
         }
 
         public void GetSummary()
@@ -65,6 +65,7 @@
             Console.WriteLine($"for the title of {Positiontitle},");
             Console.WriteLine($"the current status is: {GetStatus()},");
             Console.WriteLine($"the application was sent: {ApllicationDate},");
+            Console.WriteLine($"days since applied: {GetDaysSinceApplied()}");
             if (ResponseDate == null)
             {
                 Console.WriteLine($"no response yet!,");
@@ -76,12 +77,7 @@
             }
             Console.WriteLine($"the salary expectation was: {SalaryExpectation}.");
 
-
-
-
-
         }
-
 
     }
 }
