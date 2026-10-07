@@ -18,10 +18,7 @@ namespace JobbApplicationTracker
 
             JobManager jobManager = new JobManager();
             Console.WriteLine("Welcome to the jobb application tracker");
-            jobManager.Addjob();
-            jobManager.ShowAll();
-            Console.WriteLine("Enter the company name to update the status of the application:");
-            jobManager.UpdateStatus(Console.ReadLine());
+            Helper.ChooseAlternative(jobManager);
         }
     }
 }
