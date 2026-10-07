@@ -42,8 +42,12 @@
             Applications.Add(jobAplication);
         }
 
-        public void UpdateStatus()
+        public void UpdateStatus(string companyName)
         {
+            JobAplication jobAplication = Applications.FirstOrDefault(a => a.CompanyName == companyName);
+            Console.WriteLine("What is the status? Applied, Interview, Offer or Rejected");
+            string statusString = Console.ReadLine();
+            jobAplication.SetStatus(statusString);
 
         }
 
